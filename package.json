@@ -18,5 +18,11 @@
   "bugs": {
     "url": "https://github.com/felina/atlas/issues"
   },
-  "homepage": "https://github.com/felina/atlas"
+  "homepage": "https://github.com/felina/atlas",
+  "dependencies": {
+    "grunt": "~0.4.3",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-uglify": "~0.4.0",
+    "grunt-jsdoc": "~0.5.1"
+  }
 }
