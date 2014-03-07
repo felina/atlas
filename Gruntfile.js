@@ -69,6 +69,14 @@ module.exports = function(grunt) {
         files: '<%= jshint.lib_test.src %>',
         tasks: ['jshint:lib_test', 'qunit']
       }
+    },
+    jsdoc: {
+      dist: {
+        src: ['src/*.js'],
+        options: {
+          destination: 'doc'
+        }
+      }
     }
   });
 
@@ -77,6 +85,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   // grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-jsdoc');
   // grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task.

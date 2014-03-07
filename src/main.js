@@ -1,4 +1,10 @@
 (function($){
+    /**
+     * Creates a jQuery-wrapped HTML <button> element
+     * @param {string} text - The text to display on the button.
+     * @param {string} cls - A space-separated list of CSS classes to apply
+     * to the button.
+     */
     var makeButton = function (text, cls) {
         return $('<button>')
             .addClass(cls)
