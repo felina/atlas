@@ -7,20 +7,16 @@
     $.fn.atlas = function() {
         // TODO: make these arguments
         var dom = {
-            map: $('<div>').attr('id', 'map'),
             saver: makeButton('Save location'),
             locator: makeButton('Find me')
         };
 
-        var wrap = $('<div>')
-            .append(dom.saver)
-            .append(dom.locator)
-            .append(dom.map);
-
         var map = new GMaps({
-            div: dom.map,
+            div: $('<div>')[0],
             lat: 0,
             lng: 0,
+            width: 500,
+            height: 500,
             zoom: 2,
             click: function(e) {
                 map.removeMarkers();
@@ -64,7 +60,9 @@
             });
         });
 
-        this.append(wrap);
+        this.append(dom.saver)
+            .append(dom.locator);
+            .append($(map.el).height(500).width(500));
 
         return this;
     };
