@@ -4,7 +4,13 @@
     };
 
     // Initialises the Google Map for location picking
-    $.fn.atlas = function() {
+    $.fn.atlas = function(options) {
+        var settings = $.extend({
+            width: 500,
+            height: 500,
+            callback: function() {}
+        }, options);
+
         // TODO: make these arguments
         var dom = {
             saver: makeButton('Save location'),
@@ -15,8 +21,8 @@
             div: $('<div>')[0],
             lat: 0,
             lng: 0,
-            width: 500,
-            height: 500,
+            width: settings.width,
+            height: settings.height,
             zoom: 2,
             click: function(e) {
                 map.removeMarkers();
@@ -39,7 +45,7 @@
                 lng: pos.e,
                 callback: function(results, status) {
                     if (status === 'OK') {
-                        $(dom.field).val(results[0].formatted_address);
+                        settings.callback(results[0].formatted_address);
                     }
                 }
             });
@@ -61,7 +67,7 @@
         });
 
         this.append(dom.saver)
-            .append(dom.locator);
+            .append(dom.locator)
             .append($(map.el).height(500).width(500));
 
         return this;

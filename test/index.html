@@ -12,7 +12,13 @@
     <script src="../src/main.js"></script>
     <script>
         $(function(){
-            $('#map').atlas();
+            $('#map').atlas({
+                height: 400,
+                width: 400,
+                callback: function(placeName) {
+                    alert(placeName);
+                }
+            });
         })
     </script>
 </body>
