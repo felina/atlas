@@ -1,6 +1,8 @@
 (function($){
-    var makeButton = function (text) {
-        return $('<button>').text(text);
+    var makeButton = function (text, cls, css) {
+        return $('<button>')
+            .addClass(cls)
+            .text(text);
     };
 
     // Initialises the Google Map for location picking
@@ -8,13 +10,17 @@
         var settings = $.extend({
             width: 500,
             height: 500,
-            callback: function() {}
+            callback: function() {},
+            style: {
+                classes: '',
+                css: {}
+            }
         }, options);
 
         // TODO: make these arguments
         var dom = {
-            saver: makeButton('Save location'),
-            locator: makeButton('Find me')
+            saver: makeButton('Save location', settings.style.classes, settings.style.css),
+            locator: makeButton('Find me', settings.style.classes, settings.style.css)
         };
 
         var map = new GMaps({
