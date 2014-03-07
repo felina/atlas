@@ -1,5 +1,5 @@
 (function($){
-    var makeButton = function (text, cls, css) {
+    var makeButton = function (text, cls) {
         return $('<button>')
             .addClass(cls)
             .text(text);
@@ -78,4 +78,4 @@
 
         return this;
     };
-})(jQuery)
+})(jQuery);
