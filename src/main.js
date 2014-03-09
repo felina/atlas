@@ -33,8 +33,6 @@
             div: $('<div>')[0],
             lat: 0,
             lng: 0,
-            width: settings.width,
-            height: settings.height,
             zoom: 2,
             click: function(e) {
                 map.removeMarkers();
@@ -80,7 +78,11 @@
 
         this.append(dom.saver)
             .append(dom.locator)
-            .append($(map.el).height(500).width(500));
+            .append(
+                $(map.el)
+                    .height(settings.height)
+                    .width(settings.width)
+            );
 
         return map;
     };
