@@ -82,6 +82,6 @@
             .append(dom.locator)
             .append($(map.el).height(500).width(500));
 
-        return this;
+        return map;
     };
 })(jQuery);
