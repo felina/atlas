@@ -47,7 +47,8 @@ module.exports = function(grunt) {
         globals: {
           jQuery: true,
           alert: true,
-          GMaps: true
+          GMaps: true,
+          require: true
         }
       },
       gruntfile: {
@@ -80,15 +81,7 @@ module.exports = function(grunt) {
     }
   });
 
-  // These plugins provide necessary tasks.
-  // grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  // grunt.loadNpmTasks('grunt-contrib-qunit');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-jsdoc');
-  // grunt.loadNpmTasks('grunt-contrib-watch');
+  require('load-grunt-tasks')(grunt);
 
-  // Default task.
   grunt.registerTask('default', ['jshint']);
-
 };
