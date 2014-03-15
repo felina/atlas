@@ -37,7 +37,7 @@
             click: function(e) {
                 map.removeMarkers();
                 map.addMarker({
-                    lat: e.latLng.lat()
+                    lat: e.latLng.lat(),
                     lng: e.latLng.lng()
                 });
             }
