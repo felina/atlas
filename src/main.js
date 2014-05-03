@@ -51,8 +51,8 @@
             var pos = map.markers[0].position;
 
             GMaps.geocode({
-                lat: pos.d,
-                lng: pos.e,
+                lat: pos.lat(),
+                lng: pos.lng(),
                 callback: function(results, status) {
                     if (status === 'OK') {
                         settings.callback(results[0].formatted_address);
